@@ -2,16 +2,19 @@ import math
 
 # contains each sample
 class samples():
+
     A = [43.5, 39, 17.5]
     B = [47.5, 43, 9.5]
     C = [71.5, 21.5, 7]
     D = [48, 40, 12]
     E = [68.25, 22.75, 9]
     F = [75, 17.5, 7.5]
+
     all = [A, B, C, D, E, F]
 
 # a list of each texture and its bounds, as well as labeled names
 class textures():
+
     sand = [(90, 10), (85, 0), (100, 0)]
     loamySand = [(85, 15), (70, 0), (85, 0), (90, 10)]
     sandyLoam = [(80, 20), (52.5, 20), (52.5, 7.5), (42.5, 7.5), (50, 0), (70, 0), (85, 15)]
@@ -24,6 +27,7 @@ class textures():
     siltyClayLoam = [(20, 40), (0, 40), (0, 27.5), (20, 27.5)]
     clay = [(0, 100), (0, 60), (20, 40), (45, 40), (45, 55)]
     siltyClay = [(0, 60), (0, 40), (20, 40)]
+
     all = [sand, loamySand, sandyLoam, sandyClayLoam, loam, siltLoam, silt, sandyClay, clayLoam, siltyClayLoam, clay, siltyClay]
     names = ["sand", "loamySand", "sandyLoam", "sandyClayLoam", "loam", "siltLoam", "silt", "sandyClay", "clayLoam", "siltyClayLoam", "clay", "siltyClay"]
 
