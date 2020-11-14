@@ -1,5 +1,6 @@
 import math
 
+# contains each sample
 class samples():
     A = [43.5, 39, 17.5]
     B = [47.5, 43, 9.5]
@@ -9,6 +10,7 @@ class samples():
     F = [75, 17.5, 7.5]
     all = [A, B, C, D, E, F]
 
+# a list of each texture and its bounds, as well as labeled names
 class textures():
     sand = [(90, 10), (85, 0), (100, 0)]
     loamySand = [(85, 15), (70, 0), (85, 0), (90, 10)]
@@ -27,10 +29,11 @@ class textures():
 
 class functions():
 
+    # determines if point C is on line segment AB
     def ccw(self, pointA, pointB, pointC):
         return (pointC[1] - pointA[1]) * (pointB[0] - pointA[0]) > (pointB[1] - pointA[1]) * (pointC[0] - pointA[0])
 
-    # Return true if line segments AB and CD intersect
+    # determines if line segments AB and CD intersect
     def intersection(self, line1, line2):
         A = line1[0]
         B = line1[1]
@@ -38,6 +41,7 @@ class functions():
         D = line2[1]
         return functions.ccw(self, A, C, D) != functions.ccw(self, B, C, D) and functions.ccw(self, A, B, C) != functions.ccw(self, A, B, D)
 
+    # determines which region a given sample falls under
     def isInside(self, sample):
         sampleX = sample[0]
         sampleY = sample[2]
@@ -66,7 +70,7 @@ class functions():
             pCount += 1
 
 
-
+    # takes an integer and gives it an alphabetical label
     def numToLabel (self, value):
         letters = [
             "A", "B", "C", "D", "E",
@@ -91,6 +95,7 @@ class functions():
         text = text + letters[value]
         return text
 
+    # makes samples fit on an equilateral triangle
     def fixPoints(self):
         samTemp = samples.all
         sam = []
@@ -101,6 +106,7 @@ class functions():
             sam.append((x, y))
         return sam
 
+    # makes polygons fit on an equilateral triangle
     def fixValues(self):
         texTemp = textures.all
         tex = []
